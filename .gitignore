@@ -1,0 +1,23 @@
+# Private financial data
+data/raw/
+data/processed/
+
+# Private notebook
+notebooks/01_pdf_to_csv.ipynb
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Power BI temporary files
+*.tmp

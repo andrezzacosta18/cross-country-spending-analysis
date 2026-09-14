@@ -1,0 +1,102 @@
+﻿# COMANDOS DE CONFIGURAÇÃO DO PROJETO
+
+## 1. Criar as pastas do projeto
+
+Comando:
+New-Item -ItemType Directory -Force -Path "data/raw/pdf","data/raw/csv","data/processed","notebooks","sql"
+
+Crie um novo item → do tipo pasta → mesmo que parte do caminho já exista → neste local.
+
+New-Item → crie algo
+-ItemType Directory → esse algo é uma pasta
+-Force → não dê problema se a estrutura já existir
+-Path → estes são os caminhos
+
+Mas para seu uso cotidiano, se você simplesmente quer criar uma pasta:
+mkdir notebooks
+
+O que faz:
+- data/raw/pdf
+  Guarda localmente os PDFs originais das faturas.
+
+- data/raw/csv
+  Guarda os CSVs extraídos dos PDFs antes da limpeza.
+
+- data/processed
+  Guarda os dados depois de limpeza e transformação.
+
+- notebooks
+  Guarda os notebooks Jupyter usados para exploração e desenvolvimento.
+
+- sql
+  Guarda os scripts SQL do projeto.
+
+O parâmetro -Force permite executar novamente o comando sem gerar erro caso as pastas já existam.
+
+
+## 2. Ver a estrutura das pastas
+
+Comando:
+tree
+
+O que faz:
+Mostra visualmente a estrutura de diretórios do projeto.
+
+
+## 3. Verificar o estado do Git
+
+Comando:
+git status
+
+O que faz:
+Mostra quais arquivos foram criados, modificados ou estão preparados para commit.
+
+
+## 4. Adicionar arquivos ao Git
+
+Comando:
+git add .
+
+O que faz:
+Prepara para commit todos os arquivos que NÃO estiverem no .gitignore.
+
+
+## 5. Criar um commit
+
+Comando:
+git commit -m "Set up initial project structure"
+
+O que faz:
+Cria um registro das alterações feitas no projeto.
+
+
+## 6. Enviar para o GitHub
+
+Comando:
+git push
+
+O que faz:
+Envia os commits locais para o repositório remoto no GitHub.
+
+
+## FLUXO DO PROJETO
+
+PDF
+ ↓
+data/raw/pdf
+ ↓
+Python
+ ↓
+data/raw/csv
+ ↓
+Limpeza e transformação
+ ↓
+data/processed
+ ↓
+SQL Server
+ ↓
+Power BI
+
+IMPORTANTE:
+Os dados financeiros reais armazenados em data/raw e data/processed
+não devem ser enviados para o GitHub.
